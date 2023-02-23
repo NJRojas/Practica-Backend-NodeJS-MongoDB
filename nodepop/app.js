@@ -18,6 +18,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/**
+ * API routes
+ */
+app.use('/api/ads', require('./routes/api/ads'));
+
+/**
+ *  Website routes
+ */
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 

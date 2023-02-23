@@ -1,0 +1,23 @@
+[
+    {
+        "article": "Monitor BenQ",
+        "onSell": true,
+        "price": 300,
+        "imageUrl": "monitor-benQ.jpg",
+        "tags": [ "work", "lifestyle"]
+    },
+    {
+        "article": "iPhone 11 Pro max",
+        "onSell": true,
+        "price": 450.00,
+        "imageUrl": "iiPhone11ProMax.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    },
+    {
+        "article": "Camera Canon",
+        "onSell": true,
+        "price": 250.00,
+        "imageUrl": "camera-canon.jpg",
+        "tags": [ "lifestyle", "mobile"]
+    }
+]
