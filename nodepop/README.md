@@ -8,7 +8,7 @@ npm install
 nodemon
 cross-env
 mongoose
-// basic-auth, http-errors
+http-errors
 
 ```
 

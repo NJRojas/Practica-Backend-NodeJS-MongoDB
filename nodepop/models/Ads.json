@@ -1,23 +1,50 @@
 [
     {
-        "article": "Monitor BenQ",
-        "onSell": true,
-        "price": 300,
-        "imageUrl": "monitor-benQ.jpg",
-        "tags": [ "work", "lifestyle"]
+        "article": "Alienigena amigable",
+        "onsell": false,
+        "price": 1000,
+        "description": "Se necesita domesticado y que hable español",
+        "image_url": "alien.jpg",
+        "tags": [ "lifestyle"]
     },
     {
-        "article": "iPhone 11 Pro max",
-        "onSell": true,
-        "price": 450.00,
-        "imageUrl": "iiPhone11ProMax.jpg",
+        "article": "Agujero negro",
+        "onsell": true,
+        "price": 2000,
+        "description": "Le cabe mucho. Ideal como cartera de mujer.",
+        "image_url": "blackhole.jpg",
         "tags": [ "lifestyle", "mobile"]
     },
     {
-        "article": "Camera Canon",
-        "onSell": true,
-        "price": 250.00,
-        "imageUrl": "camera-canon.jpg",
-        "tags": [ "lifestyle", "mobile"]
+        "article": "Capa invisible",
+        "onsell": true,
+        "price": 750,
+        "description": "Perfecta para entrar a sitios sin pagar",
+        "image_url": "invisible-cape.jpg",
+        "tags": [ "lifestyle", "mobile", "work"]
+    },
+    {
+        "article": "Ufo Retro",
+        "onsell": true,
+        "price": 2500,
+        "description": "Perfecto para paseos con estilo en la ciudad",
+        "image_url": "vintage-ovni.jpg",
+        "tags": [ "lifestyle", "mobile", "motor"]
+    },
+    {
+        "article": "Maquina del tiempo",
+        "onsell": false,
+        "price": 2000,
+        "description": "La busco para viajar al mejor tiempo de la historia",
+        "image_url": "time-machine.jpg",
+        "tags": [ "mobile", "motor"]
+    },
+    {
+        "article": "Set de varitas magicas",
+        "onsell": false,
+        "price": 500,
+        "description": "La busco con urgencia para dar toques magicos",
+        "image_url": "sorcerer-wand.jpg",
+        "tags": [ "mobile", "motor"]
     }
 ]

@@ -4,13 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-require('./lib/connectMongoose')
+require('./lib/connectMongoose');
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// Global variable to be use in the view engine
+app.locals.title = 'Nodepop';
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -21,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 /**
  * API routes
  */
-app.use('/api/ads', require('./routes/api/ads'));
+app.use('/apiv1/ads', require('./routes/api/ads'));
 
 /**
  *  Website routes
