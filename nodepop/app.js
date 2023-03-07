@@ -39,6 +39,22 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+
+  // validation errors
+  if (err.array) {
+    const errorInfo = err.errors[0];
+    err.message = `Error in ${errorInfo.location}, parametro ${errorInfo.param} ${errorInfo.msg}`;
+    err.status = 422;
+  }
+
+  res.status(err.status || 500)
+
+  // Check for API errors
+  if (req.originalUrl.startsWith('/apiv1/')) {
+    res.json({ error: err.message });
+    return;
+  }
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

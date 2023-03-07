@@ -13,6 +13,8 @@ const adsSchema = mongoose.Schema({
     }
 });
 
+adsSchema.index({ name: 'text', type: -1 });
+
 /**
  * Ads.listFor
  * 

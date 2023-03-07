@@ -29,7 +29,7 @@ async function initAds() {
 }
 
 /**
- * 
+ * Loads existing Ads from ads.json file
  */
 async function loadAds() {
 
