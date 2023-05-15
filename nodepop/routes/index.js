@@ -16,29 +16,25 @@ const Ads = require('../models/Ads');
  * - It sorts the list /apiv1/ads/?sort=price
  * - even mixed
  */
-router.get('/', async function(req, res, next) {
-
+router.get('/', async function (req, res, next) {
   try {
     const query = req.query;
     const ads = await Ads.listFor(query);
     res.locals.ads = ads;
     res.render('index');
-
-    } catch(error) {
-      next(error);
-    }
+  } catch (error) {
+    next(error);
+  }
 });
 
 /**
  * GET /tags
  * Returns a list of available tags
  */
-router.get('/tags', async(req, res, next) => {
-
+router.get('/tags', async (req, res, next) => {
   const tags = await Ads.activeTags();
   res.locals.tags = tags;
   res.render('tags');
-
-})
+});
 
 module.exports = router;

@@ -5,7 +5,9 @@
         "price": 1000,
         "description": "Se necesita domesticado y que hable español",
         "image_url": "alien.jpg",
-        "tags": [ "lifestyle"]
+        "tags": [
+            "lifestyle"
+        ]
     },
     {
         "article": "Agujero negro",
@@ -13,7 +15,10 @@
         "price": 2000,
         "description": "Le cabe mucho. Ideal como cartera de mujer.",
         "image_url": "blackhole.jpg",
-        "tags": [ "lifestyle", "mobile"]
+        "tags": [
+            "lifestyle",
+            "mobile"
+        ]
     },
     {
         "article": "Capa invisible",
@@ -21,7 +26,11 @@
         "price": 750,
         "description": "Perfecta para entrar a sitios sin pagar",
         "image_url": "invisible-cape.jpg",
-        "tags": [ "lifestyle", "mobile", "work"]
+        "tags": [
+            "lifestyle",
+            "mobile",
+            "work"
+        ]
     },
     {
         "article": "Ufo Retro",
@@ -29,7 +38,11 @@
         "price": 2500,
         "description": "Perfecto para paseos con estilo en la ciudad",
         "image_url": "vintage-ovni.jpg",
-        "tags": [ "lifestyle", "mobile", "motor"]
+        "tags": [
+            "lifestyle",
+            "mobile",
+            "motor"
+        ]
     },
     {
         "article": "Maquina del tiempo",
@@ -37,7 +50,10 @@
         "price": 2000,
         "description": "La busco para viajar al mejor tiempo de la historia",
         "image_url": "time-machine.jpg",
-        "tags": [ "mobile", "motor"]
+        "tags": [
+            "mobile",
+            "motor"
+        ]
     },
     {
         "article": "Set de varitas magicas",
@@ -45,6 +61,9 @@
         "price": 500,
         "description": "La busco con urgencia para dar toques magicos",
         "image_url": "sorcerer-wand.jpg",
-        "tags": [ "mobile", "motor"]
+        "tags": [
+            "mobile",
+            "motor"
+        ]
     }
 ]

@@ -14,53 +14,48 @@ const Ads = require('../../models/Ads');
  * - It sorts the list /apiv1/ads/?sort=price
  * - even mixed
  */
-router.get('/', async(req, res, next) => {
-
-    try {
-        const query = req.query;
-        const ads = await Ads.listFor(query);
-        res.json({results: ads});
-    
-    } catch (error) {
-        next(error);
-    }
+router.get('/', async (req, res, next) => {
+  try {
+    const query = req.query;
+    const ads = await Ads.listFor(query);
+    res.json({ results: ads });
+  } catch (error) {
+    next(error);
+  }
 });
 
 /**
  * GET /api/tags
  * returns a json with the list of active tags
  */
-router.get('/tags', async(req, res, next) => {
-    try {
-        const tags = await Ads.activeTags();
-        res.json({ tags: tags });
-
-    } catch (error) {
-        next(error);
-    }
-})
+router.get('/tags', async (req, res, next) => {
+  try {
+    const tags = await Ads.activeTags();
+    res.json({ tags: tags });
+  } catch (error) {
+    next(error);
+  }
+});
 
 /**
  * POST /api/ads (object in the body)
  * Create ads
  */
-router.post('/', async(req, res, next) => {
+router.post('/', async (req, res, next) => {
+  try {
+    // Retrieve data from body
+    const adsData = req.body;
 
-    try {
-        // Retrieve data from body
-        const adsData = req.body;
+    // Create instance(s)
+    const newAds = new Ads(adsData);
 
-        // Create instance(s)
-        const newAds = new Ads(adsData);
+    // persist in Ads collection
+    const storedAds = await newAds.save();
 
-        // persist in Ads collection
-        const storedAds = await newAds.save();
-
-        res.json({results: storedAds});
-    
-    } catch (error) {
-        next(error);
-    }
+    res.json({ results: storedAds });
+  } catch (error) {
+    next(error);
+  }
 });
 
 module.exports = router;

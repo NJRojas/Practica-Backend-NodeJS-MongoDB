@@ -33,13 +33,12 @@ app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-
+app.use(function (err, req, res, next) {
   // validation errors
   if (err.array) {
     const errorInfo = err.errors[0];
@@ -47,7 +46,7 @@ app.use(function(err, req, res, next) {
     err.status = 422;
   }
 
-  res.status(err.status || 500)
+  res.status(err.status || 500);
 
   // Check for API errors
   if (req.originalUrl.startsWith('/apiv1/')) {

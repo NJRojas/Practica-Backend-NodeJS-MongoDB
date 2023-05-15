@@ -5,12 +5,8 @@
 ```sh
 npm install
 
-nodemon
-cross-env
-mongoose
-http-errors
-
 ```
+
 ### Start a MongoDB Server in Macos or Linux
 
 - In the console go to MongoDB folder and execute:
@@ -19,13 +15,14 @@ http-errors
 ./bin/mongod --dbpath ./data
 ```
 
-### Initialize the database 
+### Initialize the database
 
 - Move to the nodepop folder and execute:
 
 ```sh
 npm run initDB
 ```
+
 ### Start in developement node:
 
 - In the nodepop folder
@@ -34,7 +31,7 @@ npm run initDB
 npm run dev
 ```
 
-or 
+or
 
 ```sh
 npx nodemon
@@ -43,7 +40,6 @@ npx nodemon
 ## API Methods
 
 For a complete API documentation see [here](https://app.swaggerhub.com/apis-docs/neylarojas.developer/REST/1.0.0#/developers/searchAds)
-
 
 ### GET /api/ads/
 
@@ -80,6 +76,13 @@ For a complete API documentation see [here](https://app.swaggerhub.com/apis-docs
 }
 ```
 
+- Filte samples
+
+```sh
+    // by price
+    http://localhost:3000/?price=1000
+```
+
 ### POST /api/ads/
 
 - Create new ads. Add an object of this form
@@ -94,3 +97,5 @@ For a complete API documentation see [here](https://app.swaggerhub.com/apis-docs
     "tags": [ "work", "lifestyle"]
 },
 ```
+
+### Filers
