@@ -15,10 +15,12 @@
     </h1>
   </header>
   <h3>
-    <%= __('Bienvenido a') + title + ' , ' + __('lo tenemos todo y lo que no te lo creamos 😎') %>
+    <%= __('Welcome to ') + title + ' ,' + __(' we have all and whatever is not there we invent it for you 😎') %>
   </h3>
 
-  <h2>Anuncios</h2>
+  <h2>
+    <%= __('Ads') %>
+  </h2>
 
   <% ads.forEach(ad=> { %>
     <h3>
@@ -29,21 +31,31 @@
       <ul>
         <li>
           <% if (ad.onsell) { %>
-            <b>Se vende</b>
+            <b>
+              <%= __('On sell') %>
+            </b>
             <% } else { %>
-              <b>Se busca</b>
+              <b>
+                <%= __('Looking for') %>
+              </b>
               <% } %>
         </li>
         <li>
           <% if (ad.onsell) { %>
-            <b>Precio:</b>
+            <b>
+              <%= __('Price') %>
+            </b>
             <% } else { %>
-              <b> Ofrece: </b>
+              <b>
+                <%= __('Offer') %>
+              </b>
               <% } %>
                 <%= ad.price %> <b>€</b>
         </li>
       </ul>
-      <p><b>Descripción:</b>
+      <p><b>
+          <%= __('Description') %>
+        </b>
         <%= ad.description %>
       </p>
       <div>
