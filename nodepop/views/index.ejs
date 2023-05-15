@@ -14,6 +14,15 @@
       <%= title %>
     </h1>
   </header>
+
+  <div>
+    <% getLocales().forEach(locale=> { %>
+      <a href="/change-locale/<%= locale %>">
+        <%= locale %>
+      </a>
+      &nbsp;
+      <% })%>
+  </div>
   <h3>
     <%= __('Welcome to ') + title + ' ,' + __(' we have all and whatever is not there we invent it for you 😎') %>
   </h3>
