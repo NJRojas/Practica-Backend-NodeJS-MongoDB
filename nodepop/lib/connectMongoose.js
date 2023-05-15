@@ -15,6 +15,6 @@ mongoose.connection.once('open', () => {
 });
 
 // Define the database URL to connect to.
-mongoose.connect('mongodb://127.0.0.1:27017/nodepop');
+mongoose.connect(process.env.MONGODB_CONNECTION_STR);
 
 module.exports = mongoose.connection;

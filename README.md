@@ -7,20 +7,34 @@ npm install
 
 ```
 
+### Setup enviroments variables
+
+- Copy `.env.example` to `.env` and customize your local variables.
+
+```sh
+    cp .env.example .env
+```
+
 ### Start a MongoDB Server in Macos or Linux
 
 - In the console go to MongoDB folder and execute:
 
 ```sh
-./bin/mongod --dbpath ./data
+    ./bin/mongod --dbpath ./data
 ```
 
 ### Initialize the database
 
-- Move to the nodepop folder and execute:
+- Move to the nodepop directory
 
 ```sh
-npm run initDB
+    cd nodepop
+```
+
+then run:
+
+```sh
+    npm run initDB
 ```
 
 ### Start in developement node:
@@ -28,13 +42,13 @@ npm run initDB
 - In the nodepop folder
 
 ```sh
-npm run dev
+    npm run dev
 ```
 
 or
 
 ```sh
-npx nodemon
+    npx nodemon
 ```
 
 ## API Methods

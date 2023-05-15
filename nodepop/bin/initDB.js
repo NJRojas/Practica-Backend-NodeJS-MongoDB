@@ -1,5 +1,8 @@
 'use strict';
 
+// Import local variable values
+require('dotenv').config();
+
 const Ads = require('../models/Ads');
 const connection = require('../lib/connectMongoose');
 
