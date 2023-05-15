@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const i18n = require('./lib/i18nConfigure');
 
 require('./lib/connectMongoose');
 
@@ -14,6 +15,9 @@ app.set('view engine', 'ejs');
 
 // Global variable to be use in the view engine
 app.locals.title = 'Nodepop';
+
+// localization setup
+app.use(i18n.init);
 
 app.use(logger('dev'));
 app.use(express.json());

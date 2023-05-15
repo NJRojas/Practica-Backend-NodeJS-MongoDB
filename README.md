@@ -76,7 +76,7 @@ For a complete API documentation see [here](https://app.swaggerhub.com/apis-docs
 }
 ```
 
-- Filte samples
+- Filter samples
 
 ```sh
     // by price
