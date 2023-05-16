@@ -89,5 +89,5 @@ adsSchema.statics.activeTags = function () {
 // Create Ads collection based on adsSchema
 const Ads = mongoose.model('Ads', adsSchema);
 
-// Exportar el modelo
+// Export module
 module.exports = Ads;
