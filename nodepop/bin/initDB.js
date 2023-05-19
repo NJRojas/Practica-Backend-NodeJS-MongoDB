@@ -13,7 +13,7 @@ async function main() {
   // Initialize Ads collection
   await initAds();
 
-  // init users collection
+  // Init users collection
   await initUsers();
 
   connection.close();
@@ -51,15 +51,24 @@ async function loadAds() {
 }
 
 async function initUsers() {
-  // drop all users documents
+  // Drop all users documents
   const deleted = await User.deleteMany();
   console.log(`Deleting ${deleted.deletedCount} users.`);
 
-  // create initial users
+  // Create initial users
   const inserted = await User.insertMany([
-    { email: 'user@example.com', password: '1234' },
-    { email: 'jaba.hutt@nodepop.com', password: '1234' },
-    { email: 'boba.hutt@nodepop.com', password: '1234' },
+    {
+      email: 'user@example.com',
+      password: await User.hashPassword('1234'),
+    },
+    {
+      email: 'jaba.hutt@nodepop.com',
+      password: await User.hashPassword('1234'),
+    },
+    {
+      email: 'boba.hutt@nodepop.com',
+      password: await User.hashPassword('1234'),
+    },
   ]);
 
   console.log(`Creating ${inserted.length} users.`);
