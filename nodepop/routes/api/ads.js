@@ -49,7 +49,7 @@ router.post('/', async (req, res, next) => {
     // Create instance(s)
     const newAds = new Ads(adsData);
 
-    // persist in Ads collection
+    // Persist in Ads collection
     const storedAds = await newAds.save();
 
     res.json({ results: storedAds });

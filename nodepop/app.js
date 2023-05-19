@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const i18n = require('./lib/i18nConfigure');
+const jwtAuthMiddleware = require('./lib/jwtAuthMiddleware');
+const LoginController = require('./controllers/LoginController');
 
 require('./lib/connectMongoose');
 
@@ -22,10 +24,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+const loginController = new LoginController();
+
 /**
  * API routes
  */
-app.use('/apiv1/ads', require('./routes/api/ads'));
+app.use('/apiv1/ads', jwtAuthMiddleware, require('./routes/api/ads'));
+app.post('/apiv1/login', loginController.postAPI);
 
 // localization setup
 app.use(i18n.init);
