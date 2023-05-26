@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Ads = require('../../models/Ads');
 const upload = require('../../lib/imageUploadConfig');
+const thumbnail = require('../../lib/thumbnailConfig');
 
 /**
  * GET /apiv1/ads
@@ -46,16 +47,16 @@ router.post('/', upload.single('image'), async (req, res, next) => {
   try {
     // Retrieve data from body
     const adsData = req.body;
-    console.log(adsData);
     adsData.image_url = req.file.filename;
-    console.log(adsData);
-    console.log(req.file);
 
     // Create instance(s)
     const newAds = new Ads(adsData);
 
     // Persist in Ads collection
     const storedAds = await newAds.save();
+
+    // call Microservice to create thumbnail
+    await thumbnail(adsData.image_url, 100);
 
     res.json({ results: storedAds });
   } catch (error) {
