@@ -1,6 +1,6 @@
 # Nodepop
 
-### Install dependencies
+### Install dependencies Nodepop
 
 ```sh
 npm install
@@ -49,6 +49,26 @@ or
 
 ```sh
     npx nodemon
+```
+
+### Thumbnail Microservice
+
+- Move to Thumbnail Microservice
+
+```sh
+    cd nodepop/ThumbnailMicroservice
+```
+
+- Then install mircoservices dependencies
+
+```sh
+    npm install
+```
+
+#### Start Thumbnail Microservice in developement node:
+
+```sh
+    npx nodemon thumbnailmicroservice
 ```
 
 ## API Methods
