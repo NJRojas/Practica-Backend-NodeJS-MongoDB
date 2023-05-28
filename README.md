@@ -71,9 +71,7 @@ or
     npx nodemon thumbnailmicroservice
 ```
 
-## API Methods
-
-For a complete API documentation see [here](https://app.swaggerhub.com/apis-docs/neylarojas.developer/REST/1.0.0#/developers/searchAds)
+## API Documentation
 
 ### GET /api/ads/
 
@@ -132,4 +130,4 @@ For a complete API documentation see [here](https://app.swaggerhub.com/apis-docs
 },
 ```
 
-### Filers
+For more detailed docu check http://localhost:3000/apiv1-docs/

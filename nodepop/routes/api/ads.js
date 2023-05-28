@@ -5,9 +5,6 @@ const upload = require('../../lib/imageUploadConfig');
 const thumbnail = require('../../lib/thumbnailConfig');
 
 /**
- * GET /apiv1/ads
- * returns a list of existings ads
- *
  * Include filters
  * - by article - /apiv1/ads/?name=personal%20wings
  * - by price range
@@ -15,6 +12,42 @@ const thumbnail = require('../../lib/thumbnailConfig');
  * - by tags - /apiv1/ads/?tags=work
  * - It sorts the list /apiv1/ads/?sort=price
  * - even mixed
+ */
+
+/**
+ * @openapi
+ * /apiv1/ads:
+ *  get:
+ *   description: returns a list of existings ads. It is protected, authentication is required to be accessed
+ *   parameters:
+ *      - in: query
+ *        name: article
+ *        schema:
+ *          type: String
+ *        description: The name of the article
+ *      - in: query
+ *        name: onSell
+ *        schema:
+ *          type: boolean
+ *        description: Whether the article is on Sell or someone is looking for
+ *      - in: query
+ *        name: tags
+ *        schema:
+ *           type: string
+ *        description: a category for the requested article list
+ *      - in: query
+ *        name: price
+ *        schema:
+ *           type: float
+ *        description: a price range to select articles with price in that range
+ *      - in: query
+ *        name: sort
+ *        schema:
+ *           type: String
+ *        description: a parameter name to be sorted by
+ *   responses:
+ *    200:
+ *     description: Returns a JSON
  */
 router.get('/', async (req, res, next) => {
   try {
@@ -27,8 +60,13 @@ router.get('/', async (req, res, next) => {
 });
 
 /**
- * GET /api/tags
- * returns a json with the list of active tags
+ * @openapi
+ * /api/tags:
+ *  get:
+ *   description: returns a json with the list of active tags
+ *   responses:
+ *    200:
+ *     description: Returns a JSON
  */
 router.get('/tags', async (req, res, next) => {
   try {
@@ -40,8 +78,34 @@ router.get('/tags', async (req, res, next) => {
 });
 
 /**
- * POST /api/ads (object in the body)
- * Create ads
+ * @openapi
+ * /apiv1/ads:
+ *   post:
+ *     summary: creates a new article.
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - in: body
+ *         name: ad
+ *         description: The ad to create.
+ *         schema:
+ *           type: object
+ *           required:
+ *             - article
+ *           properties:
+ *             article:
+ *               type: string
+ *             onSell:
+ *               type: boolean
+ *             price:
+ *               type: string
+ *             image_Url:
+ *               type: boolean
+ *             tags:
+ *               type: array
+ *     responses:
+ *       200:
+ *         description: Returns a JSON
  */
 router.post('/', upload.single('image'), async (req, res, next) => {
   try {

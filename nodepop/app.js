@@ -6,6 +6,7 @@ var logger = require('morgan');
 const i18n = require('./lib/i18nConfigure');
 const jwtAuthMiddleware = require('./lib/jwtAuthMiddleware');
 const LoginController = require('./controllers/LoginController');
+const swaggerMiddleware = require('./lib/swaggerMiddleware');
 
 require('./lib/connectMongoose');
 
@@ -29,6 +30,7 @@ const loginController = new LoginController();
 /**
  * API routes
  */
+app.use('/apiv1-docs/', swaggerMiddleware);
 app.use('/apiv1/ads', jwtAuthMiddleware, require('./routes/api/ads'));
 app.post('/apiv1/login', loginController.postAPI);
 
