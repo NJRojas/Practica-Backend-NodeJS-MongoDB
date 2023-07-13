@@ -15,6 +15,6 @@ mongoose.connection.once('open', () => {
 });
 
 // Define the database URL to connect to.
-mongoose.connect(process.env.MONGODB_CONNECTION_STR);
+mongoose.connect(process.env.MONGODB_URI);
 
 module.exports = mongoose.connection;

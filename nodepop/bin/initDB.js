@@ -40,11 +40,11 @@ async function loadAds() {
   const adsList = await JSON.parse(
     fs.readFileSync('./models/Ads.json', 'utf-8')
   );
-  //console.log('Reading JSON', adsList);
+  console.log('Reading JSON', adsList);
 
   try {
     const importedAds = await Ads.create(adsList);
-    //console.log(`Importing ads...'${importedAds}`);
+    console.log(`Importing ads...'${importedAds}`);
   } catch (error) {
     console.log('error', error);
   }

@@ -1,10 +1,19 @@
 # Nodepop
 
-### Install dependencies Nodepop
+A Node JS backend App to sell and buy what you like. To have it running you need Node and MongoDB installed, make sure you have those them installed.
+
+## Deployment
+
+Follow these steps to deploy the app.
+
+### Install dependencies
 
 ```sh
-npm install
+    # Move to app directory 'nodepop'
+    cd nodepop
 
+    # Install ap dependencies
+    npm install
 ```
 
 ### Setup enviroments variables
@@ -15,60 +24,60 @@ npm install
     cp .env.example .env
 ```
 
-### Start a MongoDB Server in Macos or Linux
+### Launch MongoDB Server
 
-- In the console go to MongoDB folder and execute:
+Make sure your MongoDB is running. In the console move to MongoDB directory and run the following script:
 
 ```sh
+    # Move to the MongoDB directory
+    # Then run the script
     ./bin/mongod --dbpath ./data
 ```
 
 ### Initialize the database
 
-- Move to the nodepop directory
+- Move to the nodepop directory and run the init script
 
 ```sh
+    # Move to app directory
     cd nodepop
-```
 
-then run:
-
-```sh
+    # run the script. This adds some Ads and users to your database
     npm run initDB
 ```
 
-### Start in developement node:
+### Deploy in Development environment:
 
 - In the nodepop folder
 
 ```sh
     npm run dev
+
+    #or
+    npx nodemon
 ```
 
-or
+### Deploy in Production environment:
+
+- In the nodepop folder
 
 ```sh
-    npx nodemon
+    npm start
 ```
 
 ### Thumbnail Microservice
 
-- Move to Thumbnail Microservice
+This is a microservice used to upload image and convert them in small size. Setup as follow:
 
 ```sh
+    #  Move to Thumbnail Microservice folder inside the nodepop directory
     cd nodepop/ThumbnailMicroservice
-```
 
-- Then install mircoservices dependencies
-
-```sh
+    # Then install mircoservices dependencies
     npm install
-```
 
-#### Start Thumbnail Microservice in developement node:
-
-```sh
-    npx nodemon thumbnailmicroservice
+    # Lauch the service
+    npm start
 ```
 
 ## API Documentation
