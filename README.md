@@ -2,6 +2,12 @@
 
 A Node JS backend App to sell and buy what you like. To have it running you need Node and MongoDB installed, make sure you have those them installed.
 
+A production deployment can be seen at [**quantumpop.duckdns.org**](http://quantumpop.duckdns.org)
+
+**React App** is deployed at [**react.quantumpop.duckdns.org**](http://react.quantumpop.duckdns.org)
+
+A [**secret**](http://52.201.60.201) for you.
+
 ## Deployment
 
 Follow these steps to deploy the app.
@@ -82,7 +88,47 @@ This is a microservice used to upload image and convert them in small size. Setu
 
 ## API Documentation
 
-### GET /api/ads/
+### Testing this APIs
+
+- From a REST client, perform a login with a register user as follow to authenticate.
+
+```sh
+    http://quantumpop.duckdns.org/apiv1/login
+    # method: POST
+    # set these field in the body as x-wwww-form-urlencoded
+    # email: c3po@quantumpop.net
+    # password: supersecure-1!
+
+    # This should return a JWT token, that needs to bet set in the header of any of the requests
+```
+
+- To get the list of ads.
+
+```sh
+    http://quantumpop.duckdns.org/apiv1/ads
+    # DO NOT forget authentication
+    # method: GET
+```
+
+- To post a new Ad.
+
+```sh
+
+    http://quantumpop.duckdns.org/apiv1/ads
+     # DO NOT forget authentication
+     # method: POST
+     # In the body as 'form-data' add these data, sample
+     {
+        "article": "Monitor BenQ",
+        "onSell": true,
+        "price": 300,
+        "imageUrl": "monitor-benQ.jpg",
+        "tags": [ "work", "lifestyle"],
+        "image": <file>
+    }
+```
+
+### GET /apiv1/ads/
 
 - List existing ads.
 
@@ -102,7 +148,7 @@ This is a microservice used to upload image and convert them in small size. Setu
  }
 ```
 
-### GET /api/ads/tags
+### GET /apiv1/ads/tags
 
 - List existing tags.
 
@@ -124,7 +170,7 @@ This is a microservice used to upload image and convert them in small size. Setu
     http://localhost:3000/?price=1000
 ```
 
-### POST /api/ads/
+### POST /apiv1/ads/
 
 - Create new ads. Add an object of this form
 
@@ -135,7 +181,8 @@ This is a microservice used to upload image and convert them in small size. Setu
     "onSell": true,
     "price": 300,
     "imageUrl": "monitor-benQ.jpg",
-    "tags": [ "work", "lifestyle"]
+    "tags": [ "work", "lifestyle"],
+    "image": <file>
 },
 ```
 

@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // Global variable to be use in the view engine
-app.locals.title = 'Nodepop';
+app.locals.title = 'QuantumPop';
 
 app.use(logger('dev'));
 app.use(express.json());

@@ -58,16 +58,16 @@ async function initUsers() {
   // Create initial users
   const inserted = await User.insertMany([
     {
-      email: 'user@example.com',
-      password: await User.hashPassword('1234'),
+      email: 'c3po@quantumpop.net',
+      password: await User.hashPassword('supersecure-1!'),
     },
     {
-      email: 'jaba.hutt@nodepop.com',
-      password: await User.hashPassword('1234'),
+      email: 'jaba.hutt@quantumpop.net',
+      password: await User.hashPassword('supersecure-2'),
     },
     {
-      email: 'boba.hutt@nodepop.com',
-      password: await User.hashPassword('1234'),
+      email: 'hansolo.hutt@quantumpop.net',
+      password: await User.hashPassword('supersecure-3'),
     },
   ]);
 
