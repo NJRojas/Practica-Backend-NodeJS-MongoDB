@@ -6,8 +6,6 @@ A production deployment can be seen at [**quantumpop.duckdns.org**](http://quant
 
 **React App** is deployed at [**react.quantumpop.duckdns.org**](http://react.quantumpop.duckdns.org)
 
-A [**secret**](http://52.201.60.201) for you.
-
 ## Deployment
 
 Follow these steps to deploy the app.
@@ -87,6 +85,8 @@ This is a microservice used to upload image and convert them in small size. Setu
 ```
 
 ## API Documentation
+
+**API** is accessible at https://52.201.60.201
 
 ### Testing this APIs
 
